@@ -3,7 +3,8 @@ import { APIAlbumResponse } from "../shared/types";
 
 export const FETCH_ALBUMS_QUERY_KEY = 'fetchAlbums';
 export async function fetchAlbums(artist: string): Promise<APIAlbumResponse> {
-    const dataURL = new URL(`${import.meta.env.VITE_BACKEND_BASE_URL}/api/albums/${artist}`);
+    const backendBaseUrl = import.meta.env.VITE_BACKEND_BASE_URL || 'http://localhost:2424';
+    const dataURL = new URL(`${backendBaseUrl}/api/albums/${artist}`);
     const responseData = await fetch(dataURL);
 
     if (!responseData.ok) {

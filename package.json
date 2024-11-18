@@ -1,0 +1,15 @@
+{
+  "name": "tech-test",
+  "version": "1.0.0",
+  "scripts": {
+    "install": "npm install --prefix ./back && npm install --prefix ./itunes-search-react",
+    "start": "npm install && concurrently \"npm run start --prefix ./back\" \"npm run dev --prefix ./itunes-search-react\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "HP Tech Test",
+  "dependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
